@@ -1,0 +1,10 @@
+<md-content>
+    <md-tabs md-dynamic-height md-border-bottom class="main-tabs">
+        <md-tab ng-repeat="weatherData in $ctrl.dataToDisplay" label="{{weatherData[0].day}}" >
+            <md-content>
+                <h3 class="md-headline md-padding">3-hour forecast of the day</h3>
+                <weather-by-time-list weather-data="weatherData"></weather-by-time-list>
+            </md-content>
+        </md-tab>
+    </md-tabs>
+</md-content>

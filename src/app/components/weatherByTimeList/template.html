@@ -1,0 +1,45 @@
+<md-tabs md-dynamic-height md-border-bottom>
+    <md-tab ng-repeat="value in $ctrl.weatherData" label="{{value.time}}" >
+        <md-content class="md-padding inner-container"  layout="row" layout-xs="column">
+            <md-card md-theme="default" md-theme-watch flex>
+                <md-card-title>
+                    <md-card-title-text class="card-text">
+                        <span class="md-headline">{{ $ctrl.getTempInCelsius(value.data.main.temp) }} &deg;C</span>
+                        <span class="md-subhead">{{value.data.weather[0].description}}</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-sm card-media weather-icon">
+                            <img ng-src="{{'//openweathermap.org/img/w/' + value.data.weather[0].icon + '.png'}}"
+                                 class="md-avatar"
+                                 alt="{{value.data.weather[0].description}}"/>
+                        </div>
+                    </md-card-title-media>
+                </md-card-title>
+            </md-card>
+            <md-card md-theme="default" md-theme-watch flex>
+                <md-card-title>
+                    <md-card-title-text class="card-text">
+                        <span class="md-title">{{ $ctrl.getTempInCelsius(value.data.main.temp_min) }} &deg;C</span>
+                        <span class="md-subhead">Min. Temp</span>
+                    </md-card-title-text>
+                    <md-card-title-text class="card-text">
+                        <span class="md-title">{{ $ctrl.getTempInCelsius(value.data.main.temp_max) }} &deg;C</span>
+                        <span class="md-subhead">Max. Temp</span>
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
+            <md-card md-theme="default" md-theme-watch flex>
+                <md-card-title>
+                    <md-card-title-text class="card-text">
+                        <span class="md-title">{{ value.data.wind.speed }} m/sec</span>
+                        <span class="md-subhead">Wind</span>
+                    </md-card-title-text>
+                    <md-card-title-text class="card-text">
+                        <span class="md-title">{{ value.data.main.humidity }} %</span>
+                        <span class="md-subhead">Humidity</span>
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
+        </md-content>
+    </md-tab>
+</md-tabs>

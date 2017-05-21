@@ -1,0 +1,12 @@
+$inner-container-bg-color: #FFF9C4;
+
+md-content {
+  &.inner-container {
+    background: $inner-container-bg-color;
+  }
+  .card-text {
+    max-width: 60%;
+  }
+
+}
+
